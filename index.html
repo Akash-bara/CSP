@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Adulteration - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      transition: background 0.5s ease;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(44, 62, 80, 0.95);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 18px 50px;
+      z-index: 1000;
+      transition: background 0.4s ease, padding 0.4s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .navbar.scrolled {
+      background: rgba(26, 37, 47, 0.95);
+      padding: 12px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Nav links */
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin-right: 30px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 8px 15px;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+      background: #27ae60;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Main Heading */
+    .main-heading {
+      text-align: center;
+      margin: 40px 0 20px 0;
+      font-size: 48px;
+      font-weight: bold;
+      color: #2c3e50;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    /* Page Content */
+    .content {
+      display: flex;
+      justify-content: center;
+      padding: 30px 20px;
+    }
+
+    .box {
+      max-width: 950px;
+      background: linear-gradient(145deg, #ffffff, #e4ebf5);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    h3 { 
+      color: #27ae60; 
+      font-size: 24px; 
+      margin-bottom: 10px; 
+    }
+
+    p { 
+      font-size: 18px; 
+      line-height: 1.8; 
+      color: #333;
+    }
+
+    ul { 
+      margin-left: 25px; 
+      line-height: 1.8; 
+      font-size: 18px; 
+      color: #333;
+    }
+
+    li { 
+      margin-bottom: 10px; 
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 12px;
+      }
+      .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .navbar ul li {
+        margin: 10px;
+      }
+      .main-heading {
+        font-size: 36px;
+      }
+      h3 { font-size: 20px; }
+      p, ul { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tests.html">Tests</a></li>
+      <li><a href="survey.html">Survey</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Heading -->
+  <h1 class="main-heading">Food Adulteration</h1>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="box">
+      <h3>Definition</h3>
+      <p>Food adulteration is the process of lowering the quality of food by adding, mixing, or substituting harmful or inferior substances, making it unsafe for consumption.</p>
+      
+      <h3>Types of Food Adulteration</h3>
+      <ul>
+        <li><b>Intentional</b> – done for profit (e.g., adding water to milk).</li>
+        <li><b>Incidental</b> – due to negligence (e.g., pesticide residues).</li>
+        <li><b>Metallic Contamination</b> – from metals like lead, mercury, arsenic.</li>
+        <li><b>Packaging Hazards</b> – toxins from non-food-grade materials.</li>
+      </ul>
+
+      <h3>Common Examples</h3>
+      <ul>
+        <li><b>Milk</b> → water, starch, detergent.</li>
+        <li><b>Spices</b> → brick powder, lead salts, artificial colors.</li>
+        <li><b>Oils</b> → mixed with cheaper/argemone oil.</li>
+        <li><b>Vegetables/Fruits</b> → ripened with carbide, coated with harmful wax.</li>
+      </ul>
+
+      <h3>Harmful Effects</h3>
+      <ul>
+        <li>Food poisoning, stomach disorders.</li>
+        <li>Damage to liver, kidney, heart.</li>
+        <li>Cancer, weak immunity.</li>
+        <li>Can cause death in severe cases.</li>
+      </ul>
+
+      <h3>Prevention / Control</h3>
+      <ul>
+        <li>Buy from trusted sources.</li>
+        <li>Look for <b>FSSAI mark / food safety labels</b>.</li>
+        <li>Wash fruits/vegetables thoroughly.</li>
+        <li>Avoid brightly/artificially colored foods.</li>
+        <li>Strong government regulations and consumer awareness.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Navbar scroll transition effect
+    window.addEventListener("scroll", function() {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>

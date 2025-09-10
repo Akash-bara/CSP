@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Adulteration Awareness</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #2c3e50;
+    }
+
+    /* Home Icon */
+    .home-icon {
+      position: sticky;
+      top: 15px;
+      left: 15px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #2c3e50;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 24px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .home-icon:hover {
+      background: #27ae60;
+      transform: scale(1.1);
+    }
+
+    /* Heading */
+    .main-heading {
+      text-align: center;
+      margin: 30px 0 20px 0;
+      font-size: 36px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    /* Content box */
+    .content {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 1100px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      color: #27ae60;
+      margin-top: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* Team photo */
+    .team-photo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    .team-photo img {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-photo img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Photo gallery */
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .main-heading {
+        font-size: 28px;
+      }
+      h3 {
+        font-size: 20px;
+      }
+      .team-photo img {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Icon -->
+  <a href="index.html" class="home-icon" title="Home">&#8962;</a>
+
+  <!-- Heading -->
+  <h1 class="main-heading">Food Adulteration Awareness at Sri Chaitanya Jr College</h1>
+
+  <!-- Team Photo -->
+  <div class="content">
+    <div class="box">
+      <div class="team-photo">
+        <img src="images/team1.jpeg" alt="Team Photo">
+      </div>
+
+      <!-- Event Summary -->
+      <h2>Event Summary</h2>
+      <p>We visited <b>Sri Chaitanya Jr College</b> to educate students about the dangers of food adulteration. Our main goal was to create awareness about identifying adulterated food and promoting safe consumption practices.</p>
+
+      <h3>Demonstration with Salt</h3>
+      <p>We conducted a simple experiment to show how to distinguish between iodized salt and pure salt. This hands-on demonstration helped students understand the importance of using safe food products.</p>
+
+      <h3>Awareness Activities</h3>
+      <p>Students actively participated in the demonstration and asked questions. We discussed the harmful effects of adulterated food, the types of adulteration, and preventive measures they should follow at home.</p>
+
+      <h3>Photo Gallery</h3>
+      <p>Here are some pictures captured during the event:</p>
+      <div class="photo-gallery">
+        <img src="https://via.placeholder.com/400x250?text=Photo+1" alt="Demonstration Photo 1">
+        <img src="https://via.placeholder.com/400x250?text=Photo+2" alt="Demonstration Photo 2">
+        <img src="https://via.placeholder.com/400x250?text=Photo+3" alt="Demonstration Photo 3">
+        <!-- Add more images here -->
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
