@@ -4,100 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food Adulteration Tests</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f8f8f8;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
     }
 
-
-    /* Home icon */
-
-    .home-icon {
-      position: sticky;
+    /* Floating Home Button */
+    .home-btn {
+      position: fixed;
       top: 15px;
       left: 15px;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #2c3e50;
+      background-color: #333;
       color: white;
       border-radius: 50%;
+      padding: 12px 14px;
+      font-size: 20px;
       text-decoration: none;
-      font-size: 24px;
-      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s, transform 0.2s;
     }
 
-    .home-icon:hover {
-      background: #27ae60;
-      transform: scale(1.1);
+    .home-btn:hover {
+      background-color: #555;
+      transform: scale(1.05);
     }
 
-
-=======
-    /* Heading */
-
-    .main-heading {
+    /* Centered Heading */
+    h1 {
       text-align: center;
-      margin: 30px 0 20px 0;
-      font-size: 36px;
-      font-weight: bold;
-      color: #2c3e50;
+      font-size: 28px;
+      margin: 20px 0;
+      color: #333;
     }
-
-<<<<<<< HEAD
-=======
-    /* Content box */
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-    .content {
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .box {
-      width: 100%;
-      max-width: 1300px;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-
-    /* Test container grid */
 
     .test-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
 
     .test-box {
-      background: #fdfdfd;
+      background-color: #fff;
       border-radius: 10px;
-      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 15px;
+      transition: transform 0.2s;
     }
 
     .test-box:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
     }
 
     .test-box img {
@@ -105,249 +66,216 @@
       height: 150px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 12px;
     }
 
     .test-box h3 {
       margin: 10px 0;
-      color: #2c3e50;
-      font-size: 18px;
-      font-weight: bold;
+      color: #555;
     }
 
     .test-btn {
-      background: #27ae60;
+      background-color: #28a745;
       color: white;
       border: none;
-      padding: 10px 15px;
-      border-radius: 6px;
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 14px;
-      margin-top: 10px;
-      transition: background 0.3s ease;
+      font-size: 16px;
+      transition: background-color 0.2s;
     }
 
     .test-btn:hover {
-      background: #219150;
+      background-color: #218838;
     }
 
-
-    /* Modal */
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
-      z-index: 2000;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
     }
 
     .modal-content {
-      background: white;
+      background-color: #fff;
+      margin: 10% auto;
       padding: 20px;
       border-radius: 10px;
-      max-width: 500px;
-      width: 90%;
+      width: 80%;
+      max-width: 400px;
       text-align: center;
-    }
-
-    .modal h2 {
-      margin-bottom: 15px;
+      position: relative;
     }
 
     .close-btn {
-      background: #c0392b;
+      background-color: #d9534f;
       color: white;
       border: none;
-      padding: 8px 15px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 5px;
       cursor: pointer;
       margin-top: 20px;
+      font-size: 14px;
     }
 
     .close-btn:hover {
-      background: #a93226;
+      background-color: #c9302c;
     }
 
-=======
-    /* Responsive */
-    @media(max-width: 768px) {
-      .main-heading {
-        font-size: 28px;
-      }
-      .test-box h3 {
-        font-size: 16px;
-      }
-      .test-btn {
-        font-size: 13px;
-      }
+    .modal-content p {
+      font-size: 16px;
+      margin-top: 10px;
+      color: #333;
     }
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
   </style>
 </head>
 <body>
+  <!-- Floating Home Button -->
+  <a href="index.html" class="home-btn"><i class="fas fa-home"></i></a>
 
-  <!-- Home Icon -->
-  <a href="index.html" class="home-icon" title="Home">&#8962;</a>
+  <!-- Centered Heading -->
+  <h1>Food Adulteration Tests</h1>
 
-  <!-- Heading -->
-  <h1 class="main-heading">Food Adulteration Tests</h1>
+  <div class="test-container">
+    <!-- Your Test Boxes (unchanged) -->
+    <div class="test-box">
+      <img src="images/milk.jpeg" alt="Milk">
+      <h3>Milk</h3>
+      <button class="test-btn" onclick="openModal('milk')">Test Milk</button>
+    </div>
 
-  <!-- Content -->
-  <div class="content">
-    <div class="box">
-      <h2>Simple Home Tests for Adulteration</h2>
+    <div class="test-box">
+      <img src="images/honey.jpeg" alt="Honey">
+      <h3>Honey</h3>
+      <button class="test-btn" onclick="openModal('honey')">Test Honey</button>
+    </div>
 
-      <div class="test-container">
+    <div class="test-box">
+      <img src="images/sugar.jpeg" alt="Sugar">
+      <h3>Sugar</h3>
+      <button class="test-btn" onclick="openModal('sugar')">Test Sugar</button>
+    </div>
 
-<<<<<<< HEAD
-        <div class="test-box">
-          <img src="https://www.shutterstock.com/image-vector/tall-glass-milk-carton-box-600nw-2017090295.jpg" alt="Milk">
-=======
-        <!-- Test Examples -->
-        <div class="test-box">
-          <img src="https://via.placeholder.com/250x150?text=Milk" alt="Milk">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Milk</h3>
-          <button class="test-btn" onclick="startTest('milk')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/tumeric.jpeg" alt="Turmeric">
+      <h3>Turmeric</h3>
+      <button class="test-btn" onclick="openModal('turmeric')">Test Turmeric</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="data:image/jpeg;base64,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" alt="Honey">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Honey" alt="Honey">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Honey</h3>
-          <button class="test-btn" onclick="startTest('honey')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/chilli.jpeg" alt="Chili Powder">
+      <h3>Chili Powder</h3>
+      <button class="test-btn" onclick="openModal('chili')">Test Chili</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEREQEBETFhEWEhUQEBAXEBUQEREXFRcWFhUSFRcZHSkgGCYnGxYWIzEhJSkrLi4uFx8/OD8uNyguLisBCgoKDg0OGxAQGysmICUvLS0vMjItLTAtLy01LS0tLystLS0tLS0tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMoA+gMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUCAwYBB//EADsQAAEDAgMGBAMECgMBAAAAAAEAAhEDIQQSMQUGIkFRYRNxgZEyQqEUUmKxBxYjcoLB0eHw8RVTkjP/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAgMBBAUG/8QAMhEBAAIBAwMCBQMDAwUAAAAAAAECAwQRIRIxQQVREyJhcZEygdGhsfBCwfEGFBUjUv/aAAwDAQACEQMRAD8A+4oCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDn94t6aWFIZGeoQTAIhvTNz627LU1Grri+WOZ/zu6Oj9Oyaj5u0PmOM3u2gKrq4qvaRpTJ/Y6/DkA0jqelzz1a5rzMTMvR19N08Y+jp/fz+X0XdDfOhjG5HEU8QNaRPxfiYe/TX81v480W793nNd6dk007xzX3/l1Kuc4QEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEGuvWaxpe9wa1olziYAA5krEzERvLNazaemO7hNsb61HOezDcLWnKHloDnm8kZtNOn9uRqNdeZ2xzx7vQ6X0ikVi2bvPhxWNfOZxcJklzpmIMz9XTP81pU7u5SIjaIVD6l5DZIuMwLZi0OkcPYditqI45lahVMRlOXhkOEC8gXMk+ms8+qv6N+SZjs+q7lb7SxtHFOJiGtrm3o/ryvqeatxarp+XJ+XnNf6TzN8P4/h9BY8EAgggiQQZBB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" alt="Chili Powder">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Chili+Powder" alt="Chili Powder">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Chili Powder</h3>
-          <button class="test-btn" onclick="startTest('chili')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/coffee.jpeg" alt="Coffee Powder">
+      <h3>Coffee Powder</h3>
+      <button class="test-btn" onclick="openModal('coffee')">Test Coffee</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyyMl_BfXNC0LOQlJeDUttLzNwvGG8KlqSSg&s" alt="Turmeric">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Turmeric" alt="Turmeric">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Turmeric</h3>
-          <button class="test-btn" onclick="startTest('turmeric')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/tea.jpeg" alt="Tea Leaves">
+      <h3>Tea Leaves</h3>
+      <button class="test-btn" onclick="openModal('tea')">Test Tea</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://img.freepik.com/premium-photo/sea-salt-isolated-white-background-closeup_88281-64.jpg" alt="Salt">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Salt" alt="Salt">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Salt</h3>
-          <button class="test-btn" onclick="startTest('salt')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/softdrinks.jpeg" alt="Soft Drinks">
+      <h3>Soft Drinks</h3>
+      <button class="test-btn" onclick="openModal('softdrink')">Test Drink</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://img.freepik.com/premium-photo/sugar-with-white-background-high-quality-ultra-hd_889056-10511.jpg" alt="Sugar">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Sugar" alt="Sugar">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Sugar</h3>
-          <button class="test-btn" onclick="startTest('sugar')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/butter.jpeg" alt="Butter">
+      <h3>Butter</h3>
+      <button class="test-btn" onclick="openModal('butter')">Test Butter</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://www.eatrightbasket.com/uploads/media/2023/Wheat-Flour.jpeg" alt="Wheat Flour">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Wheat+Flour" alt="Wheat Flour">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Wheat Flour</h3>
-          <button class="test-btn" onclick="startTest('wheat')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/fruit.jpeg" alt="Fruit Juice">
+      <h3>Fruit Juice</h3>
+      <button class="test-btn" onclick="openModal('juice')">Test Juice</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://img.freepik.com/free-photo/large-set-isolated-vegetables-white-background_485709-44.jpg?semt=ais_hybrid&w=740&q=80" alt="Vegetables">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Vegetables" alt="Vegetables">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Vegetables</h3>
-          <button class="test-btn" onclick="startTest('vegetables')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/salt.jpg" alt="Salt">
+      <h3>Salt</h3>
+      <button class="test-btn" onclick="openModal('salt')">Test Salt</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://static.vecteezy.com/system/resources/previews/066/008/654/non_2x/rice-plant-bunch-with-peeled-rice-on-white-background-free-photo.jpg" alt="Rice">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Rice" alt="Rice">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Rice</h3>
-          <button class="test-btn" onclick="startTest('rice')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/icecream.jpeg" alt="Ice Cream">
+      <h3>Ice Cream</h3>
+      <button class="test-btn" onclick="openModal('icecream')">Test Ice Cream</button>
+    </div>
 
-        <div class="test-box">
-<<<<<<< HEAD
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYibMoF5c3ma8ulAhLHT_Nk0zYJUwtMCpf8g&s" alt="Tea Leaves">
-=======
-          <img src="https://via.placeholder.com/250x150?text=Tea+Leaves" alt="Tea Leaves">
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
-          <h3>Tea Leaves</h3>
-          <button class="test-btn" onclick="startTest('tea')">Start Test</button>
-        </div>
+    <div class="test-box">
+      <img src="images/vegeies.webp" alt="Vegetables">
+      <h3>Vegetables</h3>
+      <button class="test-btn" onclick="openModal('vegetables')">Test Vegetables</button>
+    </div>
 
-      </div>
+    <div class="test-box">
+      <img src="images/oil.jpeg" alt="Oil">
+      <h3>Cooking Oil</h3>
+      <button class="test-btn" onclick="openModal('oil')">Test Oil</button>
+    </div>
+
+    <div class="test-box">
+      <img src="images/wheat.jpeg" alt="wheat Flour">
+      <h3>Wheat Flour</h3>
+      <button class="test-btn" onclick="openModal('oil')">Test Flour</button>
     </div>
   </div>
 
-<<<<<<< HEAD
   <!-- Modal -->
-  <div id="testModal" class="modal" style="display:none;">
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <h2 id="testTitle"></h2>
-      <p id="testInstructions"></p>
-      <button class="close-btn" onclick="closeModal()">Close</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+      <button class="close-btn" onclick="closeModal()">Cancel</button>
     </div>
   </div>
 
   <script>
-    const testInstructions = {
-      milk: "Drop a little milk on a polished surface. If it flows without leaving a white trail, it's adulterated with water.",
-      honey: "Add a drop of honey to water. Pure honey settles at the bottom, adulterated honey dissolves quickly.",
-      chili: "Sprinkle chili powder in water. If red color spreads, it has artificial coloring.",
-      turmeric: "Add turmeric powder to water. Pure turmeric settles down, adulterated floats or gives color.",
-      salt: "Mix salt in water. Chalk powder adulteration makes it look white and insoluble.",
-      sugar: "Add sugar to water. If it leaves white particles, it may have washing soda or chalk powder.",
-      wheat: "Mix wheat flour in water. Presence of white specks indicates adulteration with soapstone.",
-      vegetables: "Rub a cotton ball soaked in oil on vegetables. If color comes out, it’s dyed artificially.",
-      rice: "Burn rice grains. If they emit plastic smell, they are adulterated with plastic rice.",
-      tea: "Sprinkle tea leaves on wet blotting paper. If a colored mark appears, it contains artificial coloring."
+    const testData = {
+      milk: "Add iodine to milk: Blue color indicates adulteration with starch.",
+      honey: "Mix honey with water: Dissolves immediately? Possible sugar syrup adulteration.",
+      sugar: "Add water to sugar: Cloudy water/residue indicates chalk powder adulteration.",
+      turmeric: "Add dilute acid to turmeric: Color change indicates lead chromate adulteration.",
+      chili: "Mix chili powder with water: Shiny residue indicates artificial color adulteration.",
+      coffee: "Add water to coffee powder: Sediment or color change indicates starch or tampering.",
+      tea: "Brew tea leaves: Color change or residue may indicate artificial coloring.",
+      softdrink: "Shake soft drink: Excessive foam or sediment may indicate adulteration.",
+      butter: "Add iodine to butter: Blue-black color indicates adulteration with starch.",
+      juice: "Mix fruit juice with water: Sudden cloudiness may indicate artificial coloring.",
+      salt: "Add salt to water: Powdered stone/white powder settles at bottom indicating adulteration.",
+      icecream: "Rub ice cream on white cloth: Yellow stain indicates washing powder presence.",
+      vegetables: "Wash vegetables with water: Green color in water indicates malachite green contamination.",
+      oil: "Take oil sample, add butter paper & heat: If paper turns translucent, oil is pure."
     };
 
-    function startTest(item) {
-      document.getElementById("testTitle").innerText = item.charAt(0).toUpperCase() + item.slice(1) + " Test";
-      document.getElementById("testInstructions").innerText = testInstructions[item];
-      document.getElementById("testModal").style.display = "flex";
+    function openModal(food) {
+      document.getElementById('modalTitle').innerText = food.charAt(0).toUpperCase() + food.slice(1) + " Test";
+      document.getElementById('modalText').innerText = testData[food];
+      document.getElementById('modal').style.display = "block";
     }
 
     function closeModal() {
-      document.getElementById("testModal").style.display = "none";
-=======
-  <script>
-    function startTest(item) {
-      alert("Starting test for: " + item);
->>>>>>> 5a692e0244f777a20ba06b79096a3109736dce0b
+      document.getElementById('modal').style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
-
 </body>
 </html>

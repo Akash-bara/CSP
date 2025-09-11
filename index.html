@@ -9,127 +9,164 @@
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-      transition: background 0.5s ease;
     }
 
-    /* Navbar Styles */
+    /* Navbar */
     .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c3e50;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
-      width: 100%;
-      background: rgba(44, 62, 80, 0.95);
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 18px 50px;
       z-index: 1000;
-      transition: background 0.4s ease, padding 0.4s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .navbar.scrolled {
-      background: rgba(26, 37, 47, 0.95);
-      padding: 12px 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    /* Nav links */
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar ul li {
-      margin-right: 30px;
-    }
-
-    .navbar ul li a {
-      text-decoration: none;
+    /* Dashboard Icon */
+    .dashboard-icon {
+      font-size: 26px;
       color: white;
-      font-size: 18px;
-      padding: 8px 15px;
-      border-radius: 6px;
-      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
 
-    .navbar ul li a:hover {
-      background: #27ae60;
-      color: #fff;
+    .dashboard-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* About Us Button */
+    .about-btn {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .about-btn:hover {
+      background-color: #219150;
       transform: scale(1.05);
     }
 
-    /* Main Heading */
-    .main-heading {
+    /* Small Popup (Tiny Window) */
+    .profile-popup {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: white;
+      border-radius: 12px;
+      padding: 12px;
+      width: 250px;
       text-align: center;
-      margin: 40px 0 20px 0;
-      font-size: 48px;
-      font-weight: bold;
-      color: #2c3e50;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 0.2s ease-in-out;
+      z-index: 1001;
     }
 
-    /* Page Content */
+   .profile-popup img {
+  width: 140px;   /* slightly bigger width */
+  height: 80px;   /* slightly bigger height */
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+    .profile-popup p {
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Dashboard Dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      background: white;
+      top: 50px;
+      min-width: 260px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 10px;
+      z-index: 1001;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+
+    .dropdown a:hover {
+      background: #f0f0f0;
+    }
+
+    /* Content Box */
     .content {
       display: flex;
       justify-content: center;
-      padding: 30px 20px;
+      padding: 20px;
     }
 
     .box {
-      max-width: 950px;
+      max-width: 1000px;
       background: linear-gradient(145deg, #ffffff, #e4ebf5);
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      text-align: center;
     }
 
-    .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    .box h1 {
+      font-size: 42px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .box img {
+      max-width: 70%;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     h3 { 
       color: #27ae60; 
       font-size: 24px; 
       margin-bottom: 10px; 
+      text-align: left;
     }
 
-    p { 
+    p, ul { 
       font-size: 18px; 
       line-height: 1.8; 
       color: #333;
+      text-align: left;
     }
 
-    ul { 
-      margin-left: 25px; 
-      line-height: 1.8; 
-      font-size: 18px; 
-      color: #333;
-    }
-
-    li { 
-      margin-bottom: 10px; 
-    }
+    li { margin-bottom: 10px; }
 
     /* Responsive */
     @media(max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        padding: 12px;
-      }
-      .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .navbar ul li {
-        margin: 10px;
-      }
-      .main-heading {
-        font-size: 36px;
-      }
+      .box h1 { font-size: 32px; }
+      .box img { max-width: 90%; }
+      .box { padding: 25px; }
       h3 { font-size: 20px; }
       p, ul { font-size: 16px; }
     }
@@ -138,68 +175,95 @@
 <body>
 
   <!-- Navbar -->
-  <div class="navbar" id="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tests.html">Tests</a></li>
-      <li><a href="survey.html">Survey</a></li>
-    </ul>
+  <div class="navbar">
+    <div class="dashboard-icon" onclick="toggleDropdown('dashboardDropdown')">&#9776;</div>
+
+    <!-- About Us Button -->
+    <button class="about-btn" onclick="togglePopup()">About Us</button>
+
+    <!-- Dashboard Dropdown -->
+    <div id="dashboardDropdown" class="dropdown" style="left: 20px; right: auto;">
+      <a href="index.html">Home</a>
+      <a href="tests.html">Tests</a>
+      <a href="survey.html">Survey</a>
+    </div>
+
+    <!-- About Us Popup -->
+    <div id="profilePopup" class="profile-popup">
+      <img src="images/profile.jpeg" alt="About Us">
+      <p>We are from <b>SRKR Engineering College</b>.  
+      We conducted a <b>Community Service Project</b> about food adulteration  
+      to create awareness about adulterated food and  
+      to demonstrate how we can detect adulteration using simple tests.</p>
+    </div>
   </div>
 
-  <!-- Main Heading -->
-  <h1 class="main-heading">Food Adulteration</h1>
-
-  <!-- Content -->
+  <!-- Content Box -->
   <div class="content">
     <div class="box">
+      <h1>Food Adulteration</h1>
+      <img src="images/foodadultertion.webp" alt="Food Adulteration Awareness">
+
       <h3>Definition</h3>
-      <p>Food adulteration is the process of lowering the quality of food by adding, mixing, or substituting harmful or inferior substances, making it unsafe for consumption.</p>
+      <p>Food adulteration refers to the act of lowering the quality of food by adding, mixing, or substituting harmful, unwanted, or cheaper substances. This makes the food unsafe for consumption, affects its nutritional value, and can pose serious health risks.</p>
       
       <h3>Types of Food Adulteration</h3>
       <ul>
-        <li><b>Intentional</b> – done for profit (e.g., adding water to milk).</li>
-        <li><b>Incidental</b> – due to negligence (e.g., pesticide residues).</li>
-        <li><b>Metallic Contamination</b> – from metals like lead, mercury, arsenic.</li>
-        <li><b>Packaging Hazards</b> – toxins from non-food-grade materials.</li>
+        <li><b>Intentional</b> – Done for profit (e.g., adding water to milk, artificial colors in spices).</li>
+        <li><b>Incidental</b> – Occurs by accident or negligence (e.g., pesticide residues, poor storage conditions).</li>
+        <li><b>Metallic Contamination</b> – Presence of harmful metals like lead, mercury, or arsenic.</li>
+        <li><b>Packaging Hazards</b> – Migration of toxins from low-quality or unsafe packaging materials.</li>
       </ul>
 
       <h3>Common Examples</h3>
       <ul>
-        <li><b>Milk</b> → water, starch, detergent.</li>
-        <li><b>Spices</b> → brick powder, lead salts, artificial colors.</li>
-        <li><b>Oils</b> → mixed with cheaper/argemone oil.</li>
-        <li><b>Vegetables/Fruits</b> → ripened with carbide, coated with harmful wax.</li>
+        <li><b>Milk</b> → Water, starch, detergent, synthetic milk.</li>
+        <li><b>Spices</b> → Brick powder, lead salts, industrial dyes.</li>
+        <li><b>Oils</b> → Mixed with cheaper/argemone oil causing epidemic dropsy.</li>
+        <li><b>Vegetables & Fruits</b> → Artificial ripening agents (calcium carbide), harmful wax coating.</li>
       </ul>
 
       <h3>Harmful Effects</h3>
       <ul>
-        <li>Food poisoning, stomach disorders.</li>
-        <li>Damage to liver, kidney, heart.</li>
-        <li>Cancer, weak immunity.</li>
-        <li>Can cause death in severe cases.</li>
+        <li>Food poisoning, stomach infections, diarrhea.</li>
+        <li>Damage to vital organs like liver, kidney, and heart.</li>
+        <li>Hormonal imbalance, cancer risk, weak immunity.</li>
+        <li>Can be life-threatening in severe cases.</li>
       </ul>
 
       <h3>Prevention / Control</h3>
       <ul>
-        <li>Buy from trusted sources.</li>
-        <li>Look for <b>FSSAI mark / food safety labels</b>.</li>
-        <li>Wash fruits/vegetables thoroughly.</li>
-        <li>Avoid brightly/artificially colored foods.</li>
-        <li>Strong government regulations and consumer awareness.</li>
+        <li>Buy food only from reliable vendors and trusted brands.</li>
+        <li>Check for <b>FSSAI certification and food safety labels</b>.</li>
+        <li>Wash fruits & vegetables thoroughly before eating.</li>
+        <li>Avoid bright or unnaturally colored foods.</li>
+        <li>Raise awareness and encourage strict government regulation.</li>
       </ul>
     </div>
   </div>
 
   <script>
-    // Navbar scroll transition effect
-    window.addEventListener("scroll", function() {
-      const navbar = document.getElementById("navbar");
-      if (window.scrollY > 20) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+    function toggleDropdown(id) {
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        if (dropdown.id === id) {
+          dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        } else {
+          dropdown.style.display = "none";
+        }
+      });
+    }
+
+    function togglePopup() {
+      const popup = document.getElementById('profilePopup');
+      popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.closest('.about-btn') && !event.target.closest('.dashboard-icon')) {
+        document.querySelectorAll('.dropdown').forEach(d => d.style.display = "none");
+        document.getElementById('profilePopup').style.display = "none";
       }
-    });
+    }
   </script>
 
 </body>
