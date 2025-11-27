@@ -1,282 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Adulteration Tests</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Floating Home Button */
-    .home-btn {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      background-color: #333;
-      color: white;
-      border-radius: 50%;
-      padding: 12px 14px;
-      font-size: 20px;
-      text-decoration: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .home-btn:hover {
-      background-color: #555;
-      transform: scale(1.05);
-    }
-
-    /* Centered Heading */
-    h1 {
-      text-align: center;
-      font-size: 28px;
-      margin: 20px 0;
-      color: #333;
-    }
-
-    .test-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .test-box {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.2s;
-    }
-
-    .test-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .test-box img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .test-box h3 {
-      margin: 10px 0;
-      color: #555;
-    }
-
-    .test-btn {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.2s;
-    }
-
-    .test-btn:hover {
-      background-color: #218838;
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 400px;
-      text-align: center;
-      position: relative;
-    }
-
-    .close-btn {
-      background-color: #d9534f;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    .close-btn:hover {
-      background-color: #c9302c;
-    }
-
-    .modal-content p {
-      font-size: 16px;
-      margin-top: 10px;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-  <!-- Floating Home Button -->
-  <a href="index.html" class="home-btn"><i class="fas fa-home"></i></a>
-
-  <!-- Centered Heading -->
-  <h1>Food Adulteration Tests</h1>
-
-  <div class="test-container">
-    <!-- Your Test Boxes (unchanged) -->
-    <div class="test-box">
-      <img src="images/milk.jpeg" alt="Milk">
-      <h3>Milk</h3>
-      <button class="test-btn" onclick="openModal('milk')">Test Milk</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/honey.jpeg" alt="Honey">
-      <h3>Honey</h3>
-      <button class="test-btn" onclick="openModal('honey')">Test Honey</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/sugar.jpeg" alt="Sugar">
-      <h3>Sugar</h3>
-      <button class="test-btn" onclick="openModal('sugar')">Test Sugar</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/tumeric.jpeg" alt="Turmeric">
-      <h3>Turmeric</h3>
-      <button class="test-btn" onclick="openModal('turmeric')">Test Turmeric</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/chilli.jpeg" alt="Chili Powder">
-      <h3>Chili Powder</h3>
-      <button class="test-btn" onclick="openModal('chili')">Test Chili</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/coffee.jpeg" alt="Coffee Powder">
-      <h3>Coffee Powder</h3>
-      <button class="test-btn" onclick="openModal('coffee')">Test Coffee</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/tea.jpeg" alt="Tea Leaves">
-      <h3>Tea Leaves</h3>
-      <button class="test-btn" onclick="openModal('tea')">Test Tea</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/softdrinks.jpeg" alt="Soft Drinks">
-      <h3>Soft Drinks</h3>
-      <button class="test-btn" onclick="openModal('softdrink')">Test Drink</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/butter.jpeg" alt="Butter">
-      <h3>Butter</h3>
-      <button class="test-btn" onclick="openModal('butter')">Test Butter</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/fruit.jpeg" alt="Fruit Juice">
-      <h3>Fruit Juice</h3>
-      <button class="test-btn" onclick="openModal('juice')">Test Juice</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/salt.jpg" alt="Salt">
-      <h3>Salt</h3>
-      <button class="test-btn" onclick="openModal('salt')">Test Salt</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/icecream.jpeg" alt="Ice Cream">
-      <h3>Ice Cream</h3>
-      <button class="test-btn" onclick="openModal('icecream')">Test Ice Cream</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/vegeies.webp" alt="Vegetables">
-      <h3>Vegetables</h3>
-      <button class="test-btn" onclick="openModal('vegetables')">Test Vegetables</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/oil.jpeg" alt="Oil">
-      <h3>Cooking Oil</h3>
-      <button class="test-btn" onclick="openModal('oil')">Test Oil</button>
-    </div>
-
-    <div class="test-box">
-      <img src="images/wheat.jpeg" alt="wheat Flour">
-      <h3>Wheat Flour</h3>
-      <button class="test-btn" onclick="openModal('oil')">Test Flour</button>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <h3 id="modalTitle"></h3>
-      <p id="modalText"></p>
-      <button class="close-btn" onclick="closeModal()">Cancel</button>
-    </div>
-  </div>
-
-  <script>
-    const testData = {
-      milk: "Add iodine to milk: Blue color indicates adulteration with starch.",
-      honey: "Mix honey with water: Dissolves immediately? Possible sugar syrup adulteration.",
-      sugar: "Add water to sugar: Cloudy water/residue indicates chalk powder adulteration.",
-      turmeric: "Add dilute acid to turmeric: Color change indicates lead chromate adulteration.",
-      chili: "Mix chili powder with water: Shiny residue indicates artificial color adulteration.",
-      coffee: "Add water to coffee powder: Sediment or color change indicates starch or tampering.",
-      tea: "Brew tea leaves: Color change or residue may indicate artificial coloring.",
-      softdrink: "Shake soft drink: Excessive foam or sediment may indicate adulteration.",
-      butter: "Add iodine to butter: Blue-black color indicates adulteration with starch.",
-      juice: "Mix fruit juice with water: Sudden cloudiness may indicate artificial coloring.",
-      salt: "Add salt to water: Powdered stone/white powder settles at bottom indicating adulteration.",
-      icecream: "Rub ice cream on white cloth: Yellow stain indicates washing powder presence.",
-      vegetables: "Wash vegetables with water: Green color in water indicates malachite green contamination.",
-      oil: "Take oil sample, add butter paper & heat: If paper turns translucent, oil is pure.",
-      wheatflour: "Add few drops of iodine to wheat flour: Blue color indicates adulteration with maida."
-    };
-
-    function openModal(food) {
-      document.getElementById('modalTitle').innerText = food.charAt(0).toUpperCase() + food.slice(1) + " Test";
-      document.getElementById('modalText').innerText = testData[food];
-      document.getElementById('modal').style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target == modal) {
-        modal.style.display = "none";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Adulteration Tests</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
       }
-    }
-  </script>
-</body>
+
+      /* Floating Home Button */
+      .home-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: #333;
+        color: white;
+        border-radius: 50%;
+        padding: 12px 14px;
+        font-size: 20px;
+        text-decoration: none;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .home-btn:hover {
+        background-color: #555;
+        transform: scale(1.05);
+      }
+
+      /* Centered Heading */
+      h1 {
+        text-align: center;
+        font-size: 28px;
+        margin: 20px 0;
+        color: #333;
+      }
+
+      .test-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .test-box {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.2s;
+      }
+
+      .test-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .test-box img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .test-box h3 {
+        margin: 10px 0;
+        color: #555;
+      }
+
+      .test-btn {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.2s;
+      }
+
+      .test-btn:hover {
+        background-color: #218838;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+      }
+
+      .close-btn {
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .close-btn:hover {
+        background-color: #c9302c;
+      }
+
+      .modal-content p {
+        font-size: 16px;
+        margin-top: 10px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Home Button -->
+    <a href="index.html" class="home-btn"><i class="fas fa-home"></i></a>
+
+    <!-- Centered Heading -->
+    <h1>Food Adulteration Tests</h1>
+
+    <div class="test-container">
+      <!-- Your Test Boxes (unchanged) -->
+      <div class="test-box">
+        <img src="images/milk.jpeg" alt="Milk" />
+        <h3>Milk</h3>
+        <button class="test-btn" onclick="openModal('milk')">Test Milk</button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/honey.jpeg" alt="Honey" />
+        <h3>Honey</h3>
+        <button class="test-btn" onclick="openModal('honey')">
+          Test Honey
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/sugar.jpeg" alt="Sugar" />
+        <h3>Sugar</h3>
+        <button class="test-btn" onclick="openModal('sugar')">
+          Test Sugar
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/tumeric.jpeg" alt="Turmeric" />
+        <h3>Turmeric</h3>
+        <button class="test-btn" onclick="openModal('turmeric')">
+          Test Turmeric
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/chilli.jpeg" alt="Chili Powder" />
+        <h3>Chili Powder</h3>
+        <button class="test-btn" onclick="openModal('chili')">
+          Test Chili
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/coffee.jpeg" alt="Coffee Powder" />
+        <h3>Coffee Powder</h3>
+        <button class="test-btn" onclick="openModal('coffee')">
+          Test Coffee
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/tea.jpeg" alt="Tea Leaves" />
+        <h3>Tea Leaves</h3>
+        <button class="test-btn" onclick="openModal('tea')">Test Tea</button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/softdrinks.jpeg" alt="Soft Drinks" />
+        <h3>Soft Drinks</h3>
+        <button class="test-btn" onclick="openModal('softdrink')">
+          Test Drink
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/butter.jpeg" alt="Butter" />
+        <h3>Butter</h3>
+        <button class="test-btn" onclick="openModal('butter')">
+          Test Butter
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/fruit.jpeg" alt="Fruit Juice" />
+        <h3>Fruit Juice</h3>
+        <button class="test-btn" onclick="openModal('juice')">
+          Test Juice
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/salt.jpg" alt="Salt" />
+        <h3>Salt</h3>
+        <button class="test-btn" onclick="openModal('salt')">Test Salt</button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/icecream.jpeg" alt="Ice Cream" />
+        <h3>Ice Cream</h3>
+        <button class="test-btn" onclick="openModal('icecream')">
+          Test Ice Cream
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/vegeies.webp" alt="Vegetables" />
+        <h3>Vegetables</h3>
+        <button class="test-btn" onclick="openModal('vegetables')">
+          Test Vegetables
+        </button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/oil.jpeg" alt="Oil" />
+        <h3>Cooking Oil</h3>
+        <button class="test-btn" onclick="openModal('oil')">Test Oil</button>
+      </div>
+
+      <div class="test-box">
+        <img src="images/wheat.jpeg" alt="wheat Flour" />
+        <h3>Wheat Flour</h3>
+        <button class="test-btn" onclick="openModal('oil')">Test Flour</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+        <button class="close-btn" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+
+    <script>
+      const testData = {
+        milk: "Add iodine to milk: Blue color indicates adulteration with starch.",
+        honey:
+          "Mix honey with water: Dissolves immediately? Possible sugar syrup adulteration.",
+        sugar:
+          "Add water to sugar: Cloudy water/residue indicates chalk powder adulteration.",
+        turmeric:
+          "Add dilute acid to turmeric: Color change indicates lead chromate adulteration.",
+        chili:
+          "Mix chili powder with water: Shiny residue indicates artificial color adulteration.",
+        coffee:
+          "Add water to coffee powder: Sediment or color change indicates starch or tampering.",
+        tea: "Brew tea leaves: Color change or residue may indicate artificial coloring.",
+        softdrink:
+          "Shake soft drink: Excessive foam or sediment may indicate adulteration.",
+        butter:
+          "Add iodine to butter: Blue-black color indicates adulteration with starch.",
+        juice:
+          "Mix fruit juice with water: Sudden cloudiness may indicate artificial coloring.",
+        salt: "Add salt to water: Powdered stone/white powder settles at bottom indicating adulteration.",
+        icecream:
+          "Rub ice cream on white cloth: Yellow stain indicates washing powder presence.",
+        vegetables:
+          "Wash vegetables with water: Green color in water indicates malachite green contamination.",
+        oil: "Take oil sample, add butter paper & heat: If paper turns translucent, oil is pure.",
+        wheatflour:
+          "Add few drops of iodine to wheat flour: Blue color indicates adulteration with maida.",
+      };
+
+      function openModal(food) {
+        document.getElementById("modalTitle").innerText =
+          food.charAt(0).toUpperCase() + food.slice(1) + " Test";
+        document.getElementById("modalText").innerText = testData[food];
+        document.getElementById("modal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        const modal = document.getElementById("modal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>
