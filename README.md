@@ -1,2 +1,2 @@
 # CSP
-survey anad awerness project
+survey and awareness project
